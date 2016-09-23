@@ -1,0 +1,38 @@
+body{
+  background: url(http://i.imgur.com/cHDC1Nu.gif) center center no-repeat;
+  background-size: cover;
+}
+
+.stage{
+  display:flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.player{
+  display: flex;
+}
+
+img.invert {
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+}
+
+h1{
+  color: #fff;
+  margin: 20px;
+  padding: 35px;
+  text-align: center;
+}
+
+.dummy{
+  background: url(http://vignette3.wikia.nocookie.net/batmanfanon/images/8/85/The_Joker.png/revision/latest?cb=20120224204420) no-repeat;
+  background-size: 65%;
+  position: absolute;
+  bottom: 20px;
+  left: 48%;
+  height: 280px;
+}
