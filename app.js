@@ -16,6 +16,10 @@ function Villian(name, health, pLow, pHigh, kLow, kHigh, sLow, sHigh) {
     special: { sLow: sLow, sHigh: sHigh },
   }
 }
+Villian.prototype.strike = function (max, min) {
+  this.health -= Math.ceil(Math.random() * (max - min) + min)
+  return this.health
+}
 function onPunch() {
   villian.strike(villian.attacks.punch.pLow, villian.attacks.punch.pHigh);
   document.getElementById('pow').className = ""
@@ -83,8 +87,5 @@ var Items = function(name, modifier, description){
 
 }
 
-Villian.prototype.strike = function (max, min) {
-  this.health -= Math.ceil(Math.random() * (max - min) + min)
-  return this.health
-}
+
 
