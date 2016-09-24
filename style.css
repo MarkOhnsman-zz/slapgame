@@ -2,11 +2,21 @@ html{
   background: url(http://i.imgur.com/cHDC1Nu.gif) no-repeat center center fixed;
   background-size: cover;
 }
-
-img{
-    position: absolute;
+.all {
+  height: 100vh;
+}
+.options{
+  height: 200px;
+}
+.punch{
+  background: url(http://www.sniperdecals.com/images/Fist.png) no-repeat center center;
+  background-size: contain;
 }
 
+
+.progress{
+  width: 60%
+}
 .hidden {
     display: none;
 }
@@ -15,8 +25,7 @@ body{
     background: transparent;
 }
 .joker{
-    display: flex;
-    align-items: flex-end;
+
 }
 
 .progress-bar {
@@ -25,8 +34,7 @@ body{
 
 h1{;
   margin: 20px;
-  padding: 15px;
-  text-align: center;
+  text-align: :left;
   color: white;
 }
 

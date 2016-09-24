@@ -2,8 +2,8 @@ var Joker = new Villian('Joker', 100, 0, 5, 5, 10, 10, 15)
 var villian = Joker
 var hits = 0
 var items = {
-  gas:new Items("Joker Gas",0.1,"Oh no! HAHAHAHA can't hit HAHAHAHA as HAHAHAHARD!")
-  gloves:new Items("Kevlar Gloves",1.3,"Tougher Gloves means harder hits")
+  gas:new Items("Joker Gas",0.1,"Oh no! HAHAHAHA can't hit HAHAHAHA as HAHAHAHARD!"),
+  gloves:new Items("Kevlar Gloves",1.3,"Tougher Gloves means harder hits"),
   batarang:new Items("Improved Batarang",1.2,"A new coating makes the Batarang deliver more damage")
 }
 
