@@ -47,8 +47,8 @@ function update() {
   var healthElem = document.getElementById('health')
   var hitCounter = document.getElementById('hitCount')
   var playerName = document.getElementById('villian')
-  if (health <= 0) {
-    health = 0
+  if (villian.health <= 0) {
+    villian.health = 0
   }
   healthElem.innerHTML = villian.health
   hitCounter.innerHTML = hits
