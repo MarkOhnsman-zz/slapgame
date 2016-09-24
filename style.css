@@ -18,13 +18,9 @@ body{
     display: flex;
     align-items: flex-end;
 }
-.stage{
-  /*display:flex;
-  align-items: center;
-  justify-content: space-around;*/
-}
-.player{
-  /*display: flex;*/
+
+.progress-bar {
+  width: 100%
 }
 
 h1{;

@@ -2,6 +2,7 @@ var Joker = new Villian('Joker', 100, 0, 5, 5, 10, 10, 15)
 var villian = Joker
 var hits = 0
 
+
 function Villian(name, health, pLow, pHigh, kLow, kHigh, sLow, sHigh) {
   this.name = name
   this.health = health
@@ -47,12 +48,14 @@ function update() {
   var healthElem = document.getElementById('health')
   var hitCounter = document.getElementById('hitCount')
   var playerName = document.getElementById('villian')
+  var damage = document.getElementById("damage")
   if (villian.health <= 0) {
     villian.health = 0
   }
   healthElem.innerHTML = villian.health
   hitCounter.innerHTML = hits
   playerName.innerHTML = villian.name
+  damage.style.width = villian.health+'%'
 }
 function reset() {
   villian.health = 100
@@ -75,4 +78,9 @@ Villian.prototype.strike = function (max, min) {
   return this.health
 }
 
-
+var healthMeter = {
+    x: 20,
+    y: 30,
+    width: 300,
+    height: 20
+};
