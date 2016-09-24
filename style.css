@@ -8,9 +8,7 @@ html{
 .options{
   height: 200px;
 }
-.punch{
-  
-}
+
 
 
 .progress{
@@ -31,22 +29,18 @@ body{
   width: 100%
 }
 
-h1{;
-  margin: 20px;
-  text-align: :left;
-  color: white;
-}
-
-h3{
-  margin: 20px;
-  padding: 15px;
-  text-align: center;
-  color: lightsteelblue;   
-}
-
 .dummy{
   /*background-size: 65%;
   position: absolute;
   bottom: 20px;
   padding-top: 2px;*/
+}
+
+.status {
+  background: ghostwhite;
+  opacity: 0.5;
+  color: black;
+  margin: 20px;
+  padding: 15px;
+  text-align: center;
 }
