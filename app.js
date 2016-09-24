@@ -1,7 +1,11 @@
 var Joker = new Villian('Joker', 100, 0, 5, 5, 10, 10, 15)
 var villian = Joker
 var hits = 0
-
+var items = {
+  gas:new Items("Joker Gas",0.1,"Oh no! HAHAHAHA can't hit HAHAHAHA as HAHAHAHARD!")
+  gloves:new Items("Kevlar Gloves",1.3,"Tougher Gloves means harder hits")
+  batarang:new Items("Improved Batarang",1.2,"A new coating makes the Batarang deliver more damage")
+}
 
 function Villian(name, health, pLow, pHigh, kLow, kHigh, sLow, sHigh) {
   this.name = name
@@ -21,7 +25,6 @@ function onPunch() {
   hits += 1
   update()
   return health
-
 }
 function onKick() {
   villian.strike(villian.attacks.kick.kLow, villian.attacks.kick.kHigh);
@@ -33,7 +36,6 @@ function onKick() {
   update()
   return health
 }
-
 function onSpecial() {
   villian.strike(villian.attacks.special.sLow, villian.attacks.special.sHigh);
   document.getElementById('pow').className = ""
@@ -62,7 +64,6 @@ function reset() {
   hits = 0
   update()
 }
-
 function Villian(name, health, pLow, pHigh, kLow, kHigh, sLow, sHigh) {
   this.name = name
   this.health = health
@@ -72,15 +73,18 @@ function Villian(name, health, pLow, pHigh, kLow, kHigh, sLow, sHigh) {
     special: { sLow: sLow, sHigh: sHigh },
   }
 }
+var Items = function(name, modifier, description){
+  this.name= name;
+  this.modifier = modifier;
+  this.description = description;
+  this.draw = function(){
+
+  }
+
+}
 
 Villian.prototype.strike = function (max, min) {
   this.health -= Math.ceil(Math.random() * (max - min) + min)
   return this.health
 }
 
-var healthMeter = {
-    x: 20,
-    y: 30,
-    width: 300,
-    height: 20
-};
