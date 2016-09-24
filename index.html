@@ -1,33 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Project Gotham</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    
-<div class="stage">
-  <div class="player">
-    
-    <button onclick='onSlap()'>Slap</button>
-    <button onclick='onPunch()'>Punch</button>
-    <button onclick='onKick()'>Kick</button>
-    <button onclick="reset()">Reset</button>
-  </div>
-</div>
-
-<div class="dummy">
-  <h1 id="dummy"></h1>
-</div>
-<div>
-  <h1 id="health"></h1>
-</div>
-
-
-
-
-
+    <div class="container">
+        <div class="stage row">
+            <div class="player btn-group">
+                <button class="btn btn-default" onclick='onPunch()'>Punch</button>
+                <button class="btn btn-default" onclick='onKick()'>Kick</button>
+                <button class="btn btn-default" onclick='onSpecial()'>Batarang</button>
+                <button class="btn btn-default" onclick="reset()">Reset</button>
+            </div>
+        </div>
+        <div class="joker row">
+            <div class="dummy col-xs-2 col-xs-offset-5">
+                <h1 id="villian">Name</h1>
+                <img src="http://1.bp.blogspot.com/-vsoTkj-MkAY/Vdz0NuTPD2I/AAAAAAAARmY/GiCWAV7mzhQ/s1600/kapow.png" alt="" class="hidden" id="pow" style="z-index: 3">
+                <img class="img-responsive" src="http://vignette3.wikia.nocookie.net/batmanfanon/images/8/85/The_Joker.png/revision/latest?cb=20120224204420"></img>
+            </div>
+            <div class="col-xs-2">
+                <h1>Health:</h1>
+                <h3 id="health">HAHAHAHA!!!</h3>
+                <h1>Hits</h1>
+                <h3 id="hitCount">0<h3>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
 </body>
+
 </html>
