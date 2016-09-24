@@ -32,9 +32,9 @@ function onKick() {
   update()
   return health
 }
+
 function onSpecial() {
-  debugger
-  villian.strike(villian.attacks.special.sLow, villian.special.kick.sHigh);
+  villian.strike(villian.attacks.special.sLow, villian.attacks.special.sHigh);
   document.getElementById('pow').className = ""
   setTimeout(function () {
     document.getElementById('pow').className = "hidden"
