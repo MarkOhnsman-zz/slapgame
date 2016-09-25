@@ -89,8 +89,8 @@ function Items(name, modifier, description){
 }
 function addMods(){
   debugger
-var allMods=0
-for(var i = 0; i<villian.mods.length; i++){
-  allMods += villian.mods.modifier
-}return allMods;
+  var allMods=0
+  for(var i = 0; i<villian.mods.length; i++){
+    allMods += villian.mods.modifier
+  }return allMods;
 }
