@@ -1,21 +1,22 @@
 var Joker = new Villian('Joker', 100, 0, 5, 5, 10, 10, 15)
 var villian = Joker
 var hits = 0
-// var items = {
-//   gas:new Items("Joker Gas",0.1,"Oh no! HAHAHAHA can't hit HAHAHAHA as HAHAHAHARD!"),
-//   gloves:new Items("Kevlar Gloves",1.3,"Tougher Gloves means harder hits"),
-//   batarang:new Items("Improved Batarang",1.2,"A new coating makes the Batarang deliver more damage")
-// }
+var items = {
+  gas:new Items("Joker Gas",0.1,"Oh no! HAHAHAHA can't hit HAHAHAHA as HAHAHAHARD!"),
+  gloves:new Items("Kevlar Gloves",1.3,"Tougher Gloves means harder hits"),
+  batarang:new Items("Improved Batarang",1.2,"A new coating makes the Batarang deliver more damage")
+}
 
 function Villian(name, health, pLow, pHigh, kLow, kHigh, sLow, sHigh) {
   this.name = name
   this.health = health
+  this.mods = [ items.gas  ]
   this.attacks = {
     punch: { pLow: pLow, pHigh: pHigh },
     kick: { kLow: kLow, kHigh: kHigh },
     special: { sLow: sLow, sHigh: sHigh },
   }
-}
+} 
 Villian.prototype.strike = function (max, min) {
   this.health -= Math.ceil(Math.random() * (max - min) + min)
   return this.health
@@ -77,7 +78,7 @@ function Villian(name, health, pLow, pHigh, kLow, kHigh, sLow, sHigh) {
     special: { sLow: sLow, sHigh: sHigh },
   }
 }
-var Items = function(name, modifier, description){
+function Items(name, modifier, description){
   this.name= name;
   this.modifier = modifier;
   this.description = description;
@@ -86,6 +87,10 @@ var Items = function(name, modifier, description){
   }
 
 }
-
-
-
+function addMods(){
+  debugger
+var allMods=0
+for(var i = 0; i<villian.mods.length; i++){
+  allMods += villian.mods.modifier
+}return allMods;
+}
