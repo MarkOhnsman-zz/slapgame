@@ -1,5 +1,5 @@
-var Joker = new Villian('Joker', 100, 0, 5, 5, 10, 10, 15)
-var villian = Joker
+var Joker = new Villain('Joker', 100, 0, 5, 5, 10, 10, 15)
+var villain = Joker
 var hits = 0
 var items = {
   gas:new Items("Joker Gas",0.1,"Oh no! HAHAHAHA can't hit HAHAHAHA as HAHAHAHARD!"),
@@ -7,7 +7,7 @@ var items = {
   batarang:new Items("Improved Batarang",1.2,"A new coating makes the Batarang deliver more damage")
 }
 
-function Villian(name, health, pLow, pHigh, kLow, kHigh, sLow, sHigh) {
+function Villain(name, health, pLow, pHigh, kLow, kHigh, sLow, sHigh) {
   this.name = name
   this.health = health
   this.mods = [ items.gas  ]
@@ -17,12 +17,12 @@ function Villian(name, health, pLow, pHigh, kLow, kHigh, sLow, sHigh) {
     special: { sLow: sLow, sHigh: sHigh },
   }
 } 
-Villian.prototype.strike = function (max, min) {
+Villain.prototype.strike = function (max, min) {
   this.health -= Math.ceil(Math.random() * (max - min) + min)
   return this.health
 }
 function onPunch() {
-  villian.strike(villian.attacks.punch.pLow, villian.attacks.punch.pHigh);
+  villain.strike(villain.attacks.punch.pLow, villain.attacks.punch.pHigh);
   document.getElementById('pow').className = ""
   setTimeout(function () {
     document.getElementById('pow').className = "hidden"
@@ -32,7 +32,7 @@ function onPunch() {
   return health
 }
 function onKick() {
-  villian.strike(villian.attacks.kick.kLow, villian.attacks.kick.kHigh);
+  villain.strike(villain.attacks.kick.kLow, villain.attacks.kick.kHigh);
   document.getElementById('pow').className = ""
   setTimeout(function () {
     document.getElementById('pow').className = "hidden"
@@ -42,7 +42,7 @@ function onKick() {
   return health
 }
 function onSpecial() {
-  villian.strike(villian.attacks.special.sLow, villian.attacks.special.sHigh);
+  villain.strike(villain.attacks.special.sLow, villain.attacks.special.sHigh);
   document.getElementById('pow').className = ""
   setTimeout(function () {
     document.getElementById('pow').className = "hidden"
@@ -54,22 +54,22 @@ function onSpecial() {
 function update() {
   var healthElem = document.getElementById('health')
   var hitCounter = document.getElementById('hitCount')
-  var playerName = document.getElementById('villian')
+  var playerName = document.getElementById('villain')
   var damage = document.getElementById("damage")
-  if (villian.health <= 0) {
-    villian.health = 0
+  if (villain.health <= 0) {
+    villain.health = 0
   }
-  healthElem.innerHTML = villian.health
+  healthElem.innerHTML = villain.health
   hitCounter.innerHTML = hits
-  playerName.innerHTML = villian.name
-  damage.style.width = villian.health+'%'
+  playerName.innerHTML = villain.name
+  damage.style.width = villain.health+'%'
 }
 function reset() {
-  villian.health = 100
+  villain.health = 100
   hits = 0
   update()
 }
-function Villian(name, health, pLow, pHigh, kLow, kHigh, sLow, sHigh) {
+function Villain(name, health, pLow, pHigh, kLow, kHigh, sLow, sHigh) {
   this.name = name
   this.health = health
   this.attacks = {
@@ -90,7 +90,7 @@ function Items(name, modifier, description){
 function addMods(){
   debugger
   var allMods=0
-  for(var i = 0; i<villian.mods.length; i++){
-    allMods += villian.mods.modifier
-  }return allMods;
+  for(var i = 0; i<villain.mods.length; i++){
+    allMods += villain.mods.modifier
+}return allMods;
 }
