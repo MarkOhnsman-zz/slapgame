@@ -8,32 +8,18 @@ html{
 .options{
   height: 200px;
 }
-
-
-
 .progress{
   width: 60%
 }
 .hidden {
     display: none;
 }
-
 body{
     background: transparent;
 }
-.joker{
-
-}
-
 .progress-bar {
   width: 100%
 }
-
-
-.dummy{
-
-}
-
 .status {
   background: ghostwhite;
   opacity: 0.5;
