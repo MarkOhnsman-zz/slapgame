@@ -90,7 +90,10 @@ function addMods(){
   var allMods= 1
   for(var i = 0; i<villain.mods.length; i++){
     allMods += villain.mods[i].modifier
-}return allMods;
+}if(allMods <= 0){
+  return .01
+} else{
+return allMods;}
 }
 
 Joker["mods"] = []
