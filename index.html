@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Project Gotham</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="all container-fluid">
         <div class="options row">
@@ -18,9 +20,20 @@
                 </div>
             </div>
             <div class="mods col-md-6">
-                <button type="button" class="punch btn btn-lg" onclick='giveGas()'>Joker Gas</button>
-                <button type="button" class="punch btn btn-lg" onclick='giveGloves()'>Kevlar Gloves</button>
-                <button type="button" class="punch btn btn-lg" onclick='giveBatarang()'>Batarang Upgrade</button>
+                <div class="mod-btns row">
+                    <div class="btn-gas col-xs-4">
+                    <button type="button" class="gas" onclick='giveGas()'><img src="https://beveragelements.com/wp-content/uploads/2014/12/Beverage-Elements-22-cu-ft-aluminum-nitrogen-beer-mix-cylinder-new.png"/></button>
+                    <h6>Joker Gas</h6>
+                    </div>
+                    <div class="btn-gloves col-xs-4">
+                    <button type="button" class="gloves" onclick='giveGloves()'><img src="http://pngimg.com/upload/gloves_PNG8284.png"/></button>
+                    <h6>Kevlar Gloves</h6>
+                    </div>
+                    <div class="btn-batarang col-xs-4">
+                    <button type="button" class="batarang" onclick='giveBatarang()'><img src="http://i.imgur.com/m7jEW.png"></button>
+                    <h6>Batarang Upgrade</h6>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="joker row">
@@ -30,7 +43,7 @@
                     id="pow" style="z-index: 3; position: fixed; height: 125px;">
                 <img class="img-responsive" src="http://vignette3.wikia.nocookie.net/batmanfanon/images/8/85/The_Joker.png/revision/latest?cb=20120224204420"></img>
                 <div class="progress">
-                    <div id="damage" class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow="45"
+                    <div id="damage" class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="45"
                         aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
             </div>

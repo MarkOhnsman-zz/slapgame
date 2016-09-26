@@ -6,7 +6,7 @@ var items = {
   gloves: new Items("Kevlar Gloves", 0.5, "Tougher Gloves means harder hits"),
   batarang: new Items("Improved Batarang", 0.2, "A new coating makes the Batarang deliver more damage")
 }
-
+update()
 function Villain(name, health, pLow, pHigh, kLow, kHigh, sLow, sHigh) {
   this.name = name
   this.health = health
@@ -19,55 +19,6 @@ function Villain(name, health, pLow, pHigh, kLow, kHigh, sLow, sHigh) {
 Villain.prototype.strike = function (max, min) {
   this.health -= (Math.ceil(Math.random() * (max - min) + min)) * addMods()
   return this.health
-}
-function onPunch() {
-  villain.strike(villain.attacks.punch.pLow, villain.attacks.punch.pHigh);
-  document.getElementById('pow').className = ""
-  setTimeout(function () {
-    document.getElementById('pow').className = "hidden"
-  }, 1000)
-  hits += 1
-  update()
-  return health
-}
-function onKick() {
-  villain.strike(villain.attacks.kick.kLow, villain.attacks.kick.kHigh);
-  document.getElementById('pow').className = ""
-  setTimeout(function () {
-    document.getElementById('pow').className = "hidden"
-  }, 1000)
-  hits += 1
-  update()
-  return health
-}
-function onSpecial() {
-  villain.strike(villain.attacks.special.sLow, villain.attacks.special.sHigh);
-  document.getElementById('pow').className = ""
-  setTimeout(function () {
-    document.getElementById('pow').className = "hidden"
-  }, 1000)
-  hits += 1
-  update()
-  return health
-}
-function update() {
-  var healthElem = document.getElementById('health')
-  var hitCounter = document.getElementById('hitCount')
-  var playerName = document.getElementById('villain')
-  var damage = document.getElementById("damage")
-  if (villain.health <= 0) {
-    villain.health = 0
-  }
-  healthElem.innerHTML = Math.ceil(villain.health)
-  hitCounter.innerHTML = hits
-  playerName.innerHTML = villain.name
-  damage.style.width = villain.health + '%'
-}
-function reset() {
-  villain.health = 100
-  hits = 0
-  villain.mods = []
-  update()
 }
 function Villain(name, health, pLow, pHigh, kLow, kHigh, sLow, sHigh) {
   this.name = name
@@ -109,4 +60,70 @@ function giveGloves() {
 
 function giveBatarang() {
   villain.mods.push(items.batarang)
+};
+
+function onPunch() {
+  villain.strike(villain.attacks.punch.pLow, villain.attacks.punch.pHigh);
+  document.getElementById('pow').className = ""
+  setTimeout(function () {
+    document.getElementById('pow').className = "hidden"
+  }, 1000)
+  hits += 1
+  update()
+}
+
+function onKick() {
+  villain.strike(villain.attacks.kick.kLow, villain.attacks.kick.kHigh);
+  document.getElementById('pow').className = ""
+  setTimeout(function () {
+    document.getElementById('pow').className = "hidden"
+  }, 1000)
+  hits += 1
+  update()
+  barUpdate()
+}
+
+function onSpecial() {
+  villain.strike(villain.attacks.special.sLow, villain.attacks.special.sHigh);
+  document.getElementById('pow').className = ""
+  setTimeout(function () {
+    document.getElementById('pow').className = "hidden"
+  }, 1000)
+  hits += 1
+  update()
+  barUpdate()
+
+}
+
+function update() {
+  var healthElem = document.getElementById('health')
+  var hitCounter = document.getElementById('hitCount')
+  var playerName = document.getElementById('villain')
+  var damage = document.getElementById("damage")
+  if (villain.health <= 0) {
+    villain.health = 0
+  }
+  healthElem.innerHTML = Math.ceil(villain.health)
+  hitCounter.innerHTML = hits
+  playerName.innerHTML = villain.name
+  damage.style.width = villain.health + '%'
+}
+
+function barUpdate(){
+  if(villain.health >= 60){
+  damage.classList.add("progress-bar-success")
+  }else if(villain.health>=30){
+    damage.classList.add("progress-bar-warning")
+  }else{
+    damage.classList.add("progress-bar-danger")
+  }
+}
+
+function reset() {
+  villain.health = 100
+  hits = 0
+  villain.mods = []
+  update()
+  debugger
+  damage.classList.remove("progress-bar-danger","progress-bar-warning")
 }

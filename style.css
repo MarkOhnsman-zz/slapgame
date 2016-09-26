@@ -2,20 +2,40 @@ html{
   background: url(http://i.imgur.com/cHDC1Nu.gif) no-repeat center center fixed;
   background-size: cover;
 }
+body{
+    background: transparent;
+}
 .all {
   height: 100vh;
 }
 .options{
   height: 200px;
 }
-.progress{
-  width: 60%
-}
 .hidden {
     display: none;
 }
-body{
-    background: transparent;
+.mod-btns img{
+  height: 100px;
+  
+}
+.gas{
+  background-color:rgba(192, 192, 192, 0.25);
+  border-color: transparent;
+}
+.gloves{
+  background-color:rgba(192, 192, 192, 0.25);
+  border-color: transparent;
+}
+.batarang{
+  background-color:rgba(192, 192, 192, 0.25);
+  border-color: transparent;
+}
+h6{
+  color: ghostwhite;
+  font-size: 20px;
+}
+.progress{
+  width: 60%
 }
 .progress-bar {
   width: 100%
